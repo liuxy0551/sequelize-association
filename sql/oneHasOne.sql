@@ -15,8 +15,8 @@ CREATE TABLE `Chinese` (
   `IDNumberId` int COMMENT '身份证号码表 id',
   `name` varchar(100) COMMENT '名字',
   `isDeleted` tinyint(1) DEFAULT 0 COMMENT '是否删除 0 未删除，1 已删除',
-  `createdTime` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `updatedTime` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间'
+  `createdAt` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updatedAt` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间'
 ) ENGINE=InnoDB COMMENT='中国公民表';
 
 INSERT INTO Chinese (IDNumberId, name) VALUES (3, '张三');
@@ -32,8 +32,8 @@ CREATE TABLE `IDNumber` (
   `number` varchar(100) COMMENT '号码',
   `address` varchar(100) COMMENT '发证机关',
   `isDeleted` tinyint(1) DEFAULT 0 COMMENT '是否删除 0 未删除，1 已删除',
-  `createdTime` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `updatedTime` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间'
+  `createdAt` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updatedAt` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间'
 ) ENGINE=InnoDB COMMENT='身份证号码表';
 
 INSERT INTO IDNumber (number, address) VALUES ('211011198204071819', '杭州市公安局');

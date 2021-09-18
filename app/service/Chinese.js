@@ -17,12 +17,14 @@ class ChineseService {
                         model: DB.IDNumber,
                         as: "IDNumberInfo",
                         required: false,
-                        attributes: ['number', 'address']
+                        where: getWhere(),
+                        attributes: {
+                            exclude: getExclude(),
+                        },
                     }
                 ],
                 offset,
                 limit,
-                raw: true
             })
             return setCtxBody(200, rows, '成功', { total: count, page, pageSize })
         } catch (error) {

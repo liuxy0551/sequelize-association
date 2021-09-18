@@ -19,13 +19,13 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: 0,
       comment: "是否删除 0 未删除，1 已删除"
     },
-    createdTime: {
+    createdAt: {
       type: DataTypes.DATE,
       allowNull: true,
       defaultValue: Sequelize.Sequelize.literal('CURRENT_TIMESTAMP'),
       comment: "创建时间"
     },
-    updatedTime: {
+    updatedAt: {
       type: DataTypes.DATE,
       allowNull: true,
       defaultValue: Sequelize.Sequelize.literal('CURRENT_TIMESTAMP'),

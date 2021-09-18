@@ -1,5 +1,6 @@
 /**
  * 多对多
+ * 一部电影 (Movie) 有多个演员 (Actor), 一个演员 (Actor) 参演多部电影 (Movie)
  */
 
 SET NAMES utf8mb4;
@@ -13,8 +14,8 @@ CREATE TABLE `Actor` (
   `id` int PRIMARY KEY AUTO_INCREMENT COMMENT '演员表 id',
   `name` varchar(100) COMMENT '演员名',
   `isDeleted` tinyint(1) DEFAULT 0 COMMENT '是否删除 0 未删除，1 已删除',
-  `createdTime` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `updatedTime` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间'
+  `createdAt` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updatedAt` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间'
 ) ENGINE=InnoDB COMMENT='演员表';
 
 INSERT INTO Actor (name) VALUES ('甄子丹');
@@ -34,8 +35,8 @@ CREATE TABLE `Movie` (
   `id` int PRIMARY KEY AUTO_INCREMENT COMMENT '电影表 id',
   `name` varchar(100) COMMENT '电影名',
   `isDeleted` tinyint(1) DEFAULT 0 COMMENT '是否删除 0 未删除，1 已删除',
-  `createdTime` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `updatedTime` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间'
+  `createdAt` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updatedAt` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间'
 ) ENGINE=InnoDB COMMENT='电影表';
 
 INSERT INTO Movie (name) VALUES ('一个人的武林');
@@ -51,8 +52,8 @@ CREATE TABLE `MovieActor` (
   `movieId` int NOT NULL COMMENT '电影表 id',
   `actorId` int NOT NULL COMMENT '演员表 id',
   `isDeleted` tinyint(1) DEFAULT 0 COMMENT '是否删除 0 未删除，1 已删除',
-  `createdTime` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `updatedTime` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间'
+  `createdAt` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updatedAt` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间'
 ) ENGINE=InnoDB COMMENT='电影演员表';
 
 INSERT INTO MovieActor (movieId, actorId) VALUES (1, 1);

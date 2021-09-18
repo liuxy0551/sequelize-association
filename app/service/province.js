@@ -16,16 +16,15 @@ class ProvinceService {
                     {
                         model: DB.City,
                         as: 'cityList',
-                        required: true,
+                        required: false,
                         where: getWhere(),
                         attributes: {
-                            exclude: getExclude(),
+                            exclude: getExclude(['ProvinceId']),
                         },
                     }
                 ],
                 offset,
                 limit,
-                raw: true
             })
             return setCtxBody(200, rows, '成功', { total: count, page, pageSize })
         } catch (error) {

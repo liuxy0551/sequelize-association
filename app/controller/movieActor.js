@@ -1,9 +1,12 @@
 const MovieActorService = require('../service/movieActor')
 
 class MovieActorController {
-    // 获取电影演员列表
     async getMovieListWithActors (ctx) {
         ctx.body = await MovieActorService.getMovieListWithActors(ctx)
+    }
+
+    async getActorListWithMovies (ctx) {
+        ctx.body = await MovieActorService.getActorListWithMovies(ctx)
     }
 }
 

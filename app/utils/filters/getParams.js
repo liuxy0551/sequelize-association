@@ -1,7 +1,6 @@
 /**
  * 查询数据时的参数字段处理
  */
-const sequelize = require('sequelize')
 
 /**
  * page 默认为 1，pageSize 默认为 10，最大不超过 100
@@ -9,11 +8,16 @@ const sequelize = require('sequelize')
  * @param {Object} query 
  */
 const getPage = (query) => {
-  let { page, pageSize } = query
-  page = Number(page) || 1
-  pageSize = Number(pageSize) || 10
-  pageSize = pageSize > 100 ? 100 : pageSize
-  return { offset: (page - 1) * pageSize, limit: pageSize, page, pageSize }
+    let { page, pageSize } = query
+    page = Number(page) || 1
+    pageSize = Number(pageSize) || 10
+    pageSize = pageSize > 100 ? 100 : pageSize
+    return {
+        offset: (page - 1) * pageSize,
+        limit: pageSize,
+        page,
+        pageSize
+    }
 }
 
 /**
@@ -21,7 +25,10 @@ const getPage = (query) => {
  * @param {Object} params 
  */
 const getWhere = (params = {}) => {
-  return { isDeleted: 0, ...params }
+    return {
+        isDeleted: 0,
+        ...params
+    }
 }
 
 /**
@@ -29,11 +36,11 @@ const getWhere = (params = {}) => {
  * @param {Array} arr 
  */
 const getExclude = (arr = []) => {
-  return ['isDeleted', ...arr]
+    return ['isDeleted', ...arr]
 }
 
 module.exports = {
-  getPage,
-  getWhere,
-  getExclude
+    getPage,
+    getWhere,
+    getExclude
 }

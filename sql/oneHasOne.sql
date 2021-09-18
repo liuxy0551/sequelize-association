@@ -19,10 +19,9 @@ CREATE TABLE `Chinese` (
   `updatedTime` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间'
 ) ENGINE=InnoDB COMMENT='中国公民表';
 
-INSERT INTO Chinese (IDNumberId, name) VALUES (4, '张三');
+INSERT INTO Chinese (IDNumberId, name) VALUES (3, '张三');
 INSERT INTO Chinese (IDNumberId, name) VALUES (1, '李四');
 INSERT INTO Chinese (IDNumberId, name) VALUES (2, '王五');
-INSERT INTO Chinese (IDNumberId, name) VALUES (3, '赵六');
 
 -- ----------------------------
 -- Table structure for IDNumber
@@ -40,8 +39,6 @@ CREATE TABLE `IDNumber` (
 INSERT INTO IDNumber (number, address) VALUES ('211011198204071819', '杭州市公安局');
 INSERT INTO IDNumber (number, address) VALUES ('211011198204071818', '杭州市公安局');
 INSERT INTO IDNumber (number, address) VALUES ('211011198204071817', '杭州市公安局');
-INSERT INTO IDNumber (number, address) VALUES ('211011198204071816', '杭州市公安局');
-INSERT INTO IDNumber (number, address) VALUES ('211011198204071815', '杭州市公安局');
 
 
 SET FOREIGN_KEY_CHECKS = 1;

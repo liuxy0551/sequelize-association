@@ -18,13 +18,14 @@ const sequelize = new Sequelize(database, user, password, options)
 
 // 全量的 model
 const models = initModels(sequelize)
-const { Chinese, IDNumber } = models
+const { Chinese, IDNumber, Province, City } = models
 
-// IDNumber.belongsTo(Chinese, { foreignKey: 'IDNumberId', targetKey: 'id', as: 'IDNumberInfo' })
 Chinese.hasOne(IDNumber, { foreignKey: 'id', sourceKey: 'IDNumberId', as: 'IDNumberInfo' })
+Province.hasMany(City, { as: 'cityList' })
+City.belongsTo(Province)
 
 module.exports = {
   ...models,
-  sequelize,
-  Sequelize
+    sequelize,
+    Sequelize
 }

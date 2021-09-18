@@ -4,6 +4,7 @@
 const Router = require('koa-router')
 const ChineseController = require('./modules/Chinese')
 const MovieActorController = require('./modules/movieActor')
+const ProvinceController = require('./modules/province')
 const router = new Router()
 
 /**
@@ -13,8 +14,9 @@ const router = new Router()
 module.exports = app => {
   router.get('/', ctx => { ctx.body = 'hello world' })
   
-  router.use('/api/v1', MovieActorController.routes(), MovieActorController.allowedMethods())
   router.use('/api/v1', ChineseController.routes(), ChineseController.allowedMethods())
+  router.use('/api/v1', MovieActorController.routes(), MovieActorController.allowedMethods())
+  router.use('/api/v1', ProvinceController.routes(), ProvinceController.allowedMethods())
 
   app.use(router.routes(), router.allowedMethods())
 }

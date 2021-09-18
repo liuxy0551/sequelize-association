@@ -16,15 +16,15 @@
 ### 一对多
 
 举例：  
-1、一个班级 (Class) 有多个学生 (Student)   
-2、一个省份 (Province) 有多个市 (City) 
+1、一个省份 (Province) 有多个市 (City)   
+2、一个班级 (Class) 有多个学生 (Student)   
 
 
 ### 多对多
 
 举例：  
 1、一个学生 (Student) 可以选修多门课程 (Course), 一门课程 (Course) 可以有多名学生 (Student) 选修  
-2、一部电影 (Movie) 有多个演员 (Actor), 一个演员 (Actor) 参演多部电影 (Movie) 
+2、一部电影 (Movie) 有多个演员 (Actor), 一个演员 (Actor) 参演多部电影 (Movie)   
 
 
 ## 运行代码

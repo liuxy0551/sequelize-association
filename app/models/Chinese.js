@@ -1,22 +1,22 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('MovieActor', {
+  return sequelize.define('Chinese', {
     id: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      comment: "电影演员表 id"
+      comment: "中国公民表 id"
     },
-    movieId: {
+    IDNumberId: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      comment: "电影表 id"
+      allowNull: true,
+      comment: "身份证号码表 id"
     },
-    actorId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      comment: "演员表 id"
+    name: {
+      type: DataTypes.STRING(100),
+      allowNull: true,
+      comment: "名字"
     },
     isDeleted: {
       type: DataTypes.BOOLEAN,
@@ -38,7 +38,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     sequelize,
-    tableName: 'MovieActor',
+    tableName: 'Chinese',
     timestamps: false,
     indexes: [
       {

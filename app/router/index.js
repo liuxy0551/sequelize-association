@@ -2,6 +2,7 @@
  * 模块化处理router
  */
 const Router = require('koa-router')
+const ChineseController = require('./modules/Chinese')
 const MovieActorController = require('./modules/movieActor')
 const router = new Router()
 
@@ -12,7 +13,8 @@ const router = new Router()
 module.exports = app => {
   router.get('/', ctx => { ctx.body = 'hello world' })
   
-  router.use('/api', MovieActorController.routes(), MovieActorController.allowedMethods())
+  router.use('/api/v1', MovieActorController.routes(), MovieActorController.allowedMethods())
+  router.use('/api/v1', ChineseController.routes(), ChineseController.allowedMethods())
 
   app.use(router.routes(), router.allowedMethods())
 }

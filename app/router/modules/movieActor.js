@@ -1,5 +1,5 @@
 /**
- * 用户相关
+ * 多对多
  */
 const Router = require('koa-router')
 const MovieActorController = require('../../controller/movieActor')

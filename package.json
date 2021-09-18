@@ -1,16 +1,17 @@
 {
-  "name": "sequelize-association-table",
+  "name": "sequelize-association",
   "version": "1.0.0",
   "description": "a demo of sequelize association table",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon app.js",
     "models": "node app/utils/mysql/sequelize-auto/index.js"
   },
   "author": "liuxy0551@qq.com",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/liuxy0551/sequelize-association-table.git"
+    "url": "git+https://github.com/liuxy0551/sequelize-association.git"
   },
   "keywords": [
     "sequelize",
@@ -20,9 +21,9 @@
     "mysql"
   ],
   "bugs": {
-    "url": "https://github.com/liuxy0551/sequelize-association-table/issues"
+    "url": "https://github.com/liuxy0551/sequelize-association/issues"
   },
-  "homepage": "https://github.com/liuxy0551/sequelize-association-table#readme",
+  "homepage": "https://github.com/liuxy0551/sequelize-association#readme",
   "dependencies": {
     "koa": "^2.13.1",
     "koa-bodyparser": "^4.3.0",
@@ -30,5 +31,8 @@
     "mysql2": "^2.3.0",
     "sequelize": "^6.6.5",
     "sequelize-auto": "^0.8.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
   }
 }

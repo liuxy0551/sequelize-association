@@ -13,19 +13,19 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true,
       comment: "演员名"
     },
-    isDelete: {
+    isDeleted: {
       type: DataTypes.BOOLEAN,
-      allowNull: false,
+      allowNull: true,
       defaultValue: 0,
       comment: "是否删除 0 未删除，1 已删除"
     },
-    createTime: {
+    createdTime: {
       type: DataTypes.DATE,
       allowNull: true,
       defaultValue: Sequelize.Sequelize.literal('CURRENT_TIMESTAMP'),
       comment: "创建时间"
     },
-    updateTime: {
+    updatedTime: {
       type: DataTypes.DATE,
       allowNull: true,
       defaultValue: Sequelize.Sequelize.literal('CURRENT_TIMESTAMP'),

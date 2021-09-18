@@ -2,16 +2,24 @@ const DB = require('../utils/mysql/db')
 const setCtxBody = require('../utils/setCtxBody')
 const { getPage, getWhere, getExclude } = require('../utils/filters/getParams')
 
-class MovieActorService {
-    // 获取电影演员列表
-    async getMovieListWithActors (ctx) {
+class ChineseService {
+    // 获取中国公民列表
+    async getChinese (ctx) {
         try {
             const { offset, limit, page, pageSize } = getPage(ctx.query)
-            const { count, rows } = await DB.Movie.findAndCountAll({
+            const { count, rows } = await DB.Chinese.findAndCountAll({
                 where: getWhere(),
                 attributes: {
-                    exclude: getExclude()
+                    exclude: getExclude(),
                 },
+                include: [
+                    {
+                        model: DB.IDNumber,
+                        as: "IDNumberInfo",
+                        required: false,
+                        attributes: ['number', 'address']
+                    }
+                ],
                 offset,
                 limit,
                 raw: true
@@ -23,4 +31,4 @@ class MovieActorService {
     }
 }
 
-module.exports = new MovieActorService()
+module.exports = new ChineseService()
